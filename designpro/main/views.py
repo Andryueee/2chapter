@@ -42,9 +42,3 @@ def ShowProfilePageView(request):
 
 
 
-def create(request):
-    form = ArticlesForm()
-    data = {
-        'form': form
-    }
-    return render(request, 'main/create.html')

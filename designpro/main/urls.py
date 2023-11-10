@@ -4,7 +4,7 @@ from django.urls import re_path
 
 from django.contrib import admin
 urlpatterns = [
-   path('catalog/', views.index, name='home'),
+   re_path('catalog/', views.index, name='home'),
    path('about/', views.about),
    re_path(r'^register/$', views.register, name='register'),
 
@@ -18,8 +18,4 @@ urlpatterns += [
 ]
 
 
-urlpatterns += [
-   re_path('create/', views.create, name='create')
-
-]
 

@@ -5,7 +5,8 @@
 {% if user.is_authenticated %}
 <h1>Личный кабинет</h1>
 <br>
-<a href="{% url 'home'%}?next={{request.path}}"><input type="button" value="На главную страницу"></a>
+<a href="{% url 'application_home' %}?next={{request.path}}"><input type="button" value="Мои заявки"></a>
+<a href="{% url 'home'%}?next={{request.path}}"><input type="button" value="Назад"></a>
 {% else %}
 <h1>Ошибка!</h1>
 <h4>Вы не были авторизованы</h4>
