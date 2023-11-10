@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{%  block title %}Создание заявки{% endblock %}
+
+{% block content %}
+<div class="features" xmlns="http://www.w3.org/1999/html">
+        <h1 class="create-title">Создание заявки</h1>
+        <form class="create-form" method="post">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.full_text }}
+            <input type="text" placeholder="Название заказа" required class="form-control"><br>
+            <input type="text" placeholder="Ваше имя" required class="form-control" name="First_name" maxlength="150" id="id_first_name"><br>
+            <input type="email" name="email" placeholder="andryushka@mail.ru" required class="form-control" maxlength="254" id="id_email"><br>
+            <textarea class="form-control" placeholder="Описание" required></textarea><br>
+
+            <select name="select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"> required>
+            <option value="s1">3D-дизайн</option>
+            <option value="s2">2D-дизайн</option>
+                <option value="s3">Эскиз</option>
+                <option value="s4">Другое</option>
+            </select><br><br>
+
+            <a href="{% url 'home'%}?next={{request.path}}"<button class="btn btn-success" type="submit">Назад</button></a>
+            <button class="btn btn-success" type="submit">Добавить</button>
+
+
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,8 +1,19 @@
 {% extends 'main/layout.html' %}
 
 {% block content %}
-<h1>Личный кабинет</h1>
 
+{% if user.is_authenticated %}
+<h1>Личный кабинет</h1>
+<br>
+<a href="{% url 'home'%}?next={{request.path}}"><input type="button" value="На главную страницу"></a>
+{% else %}
+<h1>Ошибка!</h1>
+<h4>Вы не были авторизованы</h4>
+<br>
+<a href="{% url 'login'%}?next={{request.path}}"><input type="button" value="Авторизоваться"</a>
+<a href="{% url 'home'%}?next={{request.path}}"><input type="button" value="Назад"></a>
+
+{% endif %}
 
 
 {% endblock %}

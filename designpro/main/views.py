@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
+
 from .models import Profile
 
 
@@ -38,3 +39,12 @@ def register(request):
 from django.views.generic.detail import DetailView
 def ShowProfilePageView(request):
     return render(request, 'main/user_profile.html')
+
+
+
+def create(request):
+    form = ArticlesForm()
+    data = {
+        'form': form
+    }
+    return render(request, 'main/create.html')

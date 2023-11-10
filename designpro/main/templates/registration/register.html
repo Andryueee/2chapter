@@ -9,7 +9,7 @@
         <p>
             <label for="id_username">Придумайте логин:</label>
             <input type="text" name="username" maxlength="150" required id="id_username">
-            <span class="helptext">Требуемый. Не более 150 символов. Только буквы, цифры и @/./+/_.</span>
+
         </p>
         <p>
             <label for="id_first_name">Ваше имя:</label>
@@ -17,7 +17,7 @@
         </p>
         <p>
             <label for="id_email">Ваш Email:</label>
-            <input type="email" name="email" placeholder="andyushka@mail.ru" maxlength="254" id="id_email">
+            <input type="email" name="email" placeholder="andryushka@mail.ru" maxlength="254" id="id_email">
         </p>
         <p>
             <label for="id_password">Придумайте пароль:</label>
@@ -29,5 +29,6 @@
 
         </p>
         <p><input type="submit" value="Создать аккаунт"></p>
+        <a href="{% url 'home'%}?next={{request.path}}"><input type="button" value="Назад"></a>
     </form>
 {% endblock %}

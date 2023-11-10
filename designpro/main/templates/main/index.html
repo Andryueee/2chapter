@@ -3,18 +3,20 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-<main>
-    <h1>Design Pro</h1>
 
-</main>
-    <aside>
-        <h1>Навигация</h1>
+
+ <aside>
+        <h4 class="navigation">Навигация:</h4>
     <ul>
        {% if user.is_authenticated %}
-         <li class="account">Аккаунт: {{ user.get_username }}</li>
+        <li class="account">Аккаунт: {{ user.get_username }}</li>
         <br>
-          <li><a href="{% url 'user_profile'%}?next={{request.path}}">Личный кабинет</a></li>
-         <li><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>
+          <a href="{% url 'user_profile'%}?next={{request.path}}"><li><i class="fas my-profile"></i>Личный кабинет</li></a>
+        <a href="{% url 'logout'%}?next={{request.path}}"><li><i class="fas log-out"></i>Выход</li></a>
+
+        <br>
+        <a href="{% url 'create' %}}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить запись</button></li></a>
+
        {% else %}
          <li><a href="{% url 'login'%}?next={{request.path}}">Войти</a></li>
           <li><a href="{% url 'register'%}?next={{request.path}}">Регистрация</a></li>
@@ -22,4 +24,10 @@
        {% endif %}
       </ul>
     </aside>
+<main>
+    <h1>Design Pro</h1>
+    <br>
+    <p>«Design.pro» - Создание и оформление интерьеров жилых помещений. </p>
+</main>
+
 {% endblock %}

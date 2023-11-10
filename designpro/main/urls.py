@@ -4,7 +4,7 @@ from django.urls import re_path
 
 from django.contrib import admin
 urlpatterns = [
-   path('catalog/', views.index),
+   path('catalog/', views.index, name='home'),
    path('about/', views.about),
    re_path(r'^register/$', views.register, name='register'),
 
@@ -13,8 +13,13 @@ urlpatterns = [
 from .views import *
 
 urlpatterns += [
-   path('user_profile/', views.ShowProfilePageView, name='user_profile'),
+   path('profile/', views.ShowProfilePageView, name='user_profile'),
 
 ]
 
+
+urlpatterns += [
+   re_path('create/', views.create, name='create')
+
+]
 
