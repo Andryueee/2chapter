@@ -13,7 +13,7 @@ urlpatterns = [
 from .views import *
 
 urlpatterns += [
-   re_path('user_profile/<int:pk>/', ShowProfilePageView.as_view(), name='user_profile'),
+   path('user_profile/', views.ShowProfilePageView, name='user_profile'),
 
 ]
 
