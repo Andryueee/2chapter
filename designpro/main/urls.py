@@ -4,9 +4,14 @@ from django.urls import re_path
 
 from django.contrib import admin
 urlpatterns = [
-   re_path('catalog/', views.index, name='home'),
-   path('about/', views.about),
+   path('', views.index, name='home'),
    re_path(r'^register/$', views.register, name='register'),
+
+
+
+
+
+   path('about/', views.about),
 
 ]
 

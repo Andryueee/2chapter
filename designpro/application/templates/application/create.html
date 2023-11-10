@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{%  block title %}Создание заявки{% endblock %}
+
+{% block content %}
+<div class="features">
+        <h1 class="create-title">Создание заявки</h1>
+        <form class="create-form" method="post">
+            {% csrf_token %}<br>
+            {{ form.title }}<br>
+            {{ form.name }}<br>
+            {{ form.email }}<br>
+            {{ form.full_text }}<br>
+            {{ form.category }}<br>
+
+            <span>{{ error }}</span>
+
+
+            <a href="{% url 'home'%}?next={{request.path}}"<button class="btn btn-success" type="submit">Назад</button></a>
+            <button class="btn btn-success" type="submit">Добавить</button>
+
+
+        </form>
+    </div>
+
+{% endblock %}

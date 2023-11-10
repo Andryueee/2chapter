@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Мои заявки{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="features" >
+  <h1 class="application-title" >Мои заявки</h1>
+        <a class="home-button" href="{% url 'home'%}?next={{request.path}}"><input type="button" value="На главную страницу"></a>
+      {% if application %}
+        {% for el in application %}
+          <div class="alert-warning1">
+            <h3>{{el.title}}</h3>
+            <p>{{el.full_text}}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>У вас ещё не было заявок</p>
+      {% endif %}
+      {# Комментарий #}
+  </div>
+
+{% endblock %}
