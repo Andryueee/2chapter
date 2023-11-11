@@ -18,10 +18,10 @@ class ApplicationUpdateView(UpdateView):
 
 class ApplicationDeleteView(DeleteView):
     model = Articles
-    success_url = '/application_home/'
+    success_url = '/application/'
     template_name = 'application/application-delete.html'
 
-    form_class = ArticlesForm
+
 
 
 def application_home(request):

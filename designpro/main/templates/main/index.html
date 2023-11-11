@@ -12,6 +12,8 @@
         <li class="account">Аккаунт: {{ user.get_username }}</li>
         <br>
           <a href="{% url 'user_profile'%}?next={{request.path}}"><li><i class="fas my-profile"></i>Личный кабинет</li></a>
+
+
         <a href="{% url 'logout'%}?next={{request.path}}"><li><i class="fas log-out"></i>Выход</li></a>
 
         <br>

@@ -10,7 +10,9 @@ urlpatterns = [
 
     path('', include('main.urls')),
     path('superadmin/', admin.site.urls),
+
     re_path('application/', include('application.urls'), name='application'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

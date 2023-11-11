@@ -1,4 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
+from django.core.validators import FileExtensionValidator
+import django
+
+
+
+
+
+
 
 
 class Articles(models.Model):
@@ -19,3 +29,4 @@ class Articles(models.Model):
     class Meta:
         verbose_name = "заявка"
         verbose_name_plural = "Заявки"
+

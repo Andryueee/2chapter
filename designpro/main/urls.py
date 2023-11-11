@@ -15,7 +15,6 @@ urlpatterns = [
 
 ]
 
-from .views import *
 
 urlpatterns += [
    re_path('profile/', views.ShowProfilePageView, name='user_profile'),
