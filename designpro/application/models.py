@@ -12,6 +12,10 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
+
+    def get_absolute_url(self):
+        return f'/application'
+
     class Meta:
         verbose_name = "заявка"
         verbose_name_plural = "Заявки"

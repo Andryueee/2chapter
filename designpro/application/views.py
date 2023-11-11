@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 class ApplicationDetailView(DetailView):
@@ -9,6 +9,19 @@ class ApplicationDetailView(DetailView):
     template_name = 'application/details_view.html'
     context_object_name = 'article'
 
+class ApplicationUpdateView(UpdateView):
+    model = Articles
+    template_name = 'application/create.html'
+
+    form_class = ArticlesForm
+
+
+class ApplicationDeleteView(DeleteView):
+    model = Articles
+    success_url = '/application_home/'
+    template_name = 'application/application-delete.html'
+
+    form_class = ArticlesForm
 
 
 def application_home(request):
