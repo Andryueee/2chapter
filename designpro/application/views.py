@@ -1,6 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
+from django.views.generic import DetailView
+
+
+class ApplicationDetailView(DetailView):
+    model = Articles
+    template_name = 'application/details_view.html'
+    context_object_name = 'article'
+
+
+
 def application_home(request):
     application = Articles.objects.all()
     return  render(request, 'application/application_home.html', {'application': application})

@@ -19,6 +19,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
 INSTALLED_APPS = [
     'application',
     'main',
@@ -122,4 +124,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-LOGOUT_REDIRECT_URL = '/register/'
+

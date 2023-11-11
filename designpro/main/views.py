@@ -15,14 +15,18 @@ def about(request):
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-
+from django.views.decorators.csrf import csrf_exempt
 
 
 from .forms import UserRegistrationForm
 
+
+@csrf_exempt
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
+
+
         if user_form.is_valid():
             # Create a new user object but avoid saving it yet
             new_user = user_form.save(commit=False)

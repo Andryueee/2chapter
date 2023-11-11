@@ -7,13 +7,15 @@
 
 
     <div class="features" >
-  <h1 class="application-title" >Мои заявки</h1>
+  <h1 class="application-title" >Мои заявки</h1><br><br>
         <a class="home-button" href="{% url 'home'%}?next={{request.path}}"><input type="button" value="На главную страницу"></a>
       {% if application %}
         {% for el in application %}
           <div class="alert-warning1">
             <h3>{{el.title}}</h3>
-            <p>{{el.full_text}}</p>
+
+
+              <a href="{% url 'application-detail' el.id %}" class="btn btn-warning" >Подробнее</a><br><br><br>
           </div>
         {% endfor %}
       {% else %}

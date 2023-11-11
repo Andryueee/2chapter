@@ -3,6 +3,7 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
+{% csrf_token %}
     <h1>Добро пожаловать {{ new_user.first_name }}!</h1>
     <p>Ваша учетная запись успешно создана. Теперь вы можете <a href="{% url "login" %}">Авторизоваться</a>.</p>
 {% endblock %}
